@@ -154,6 +154,7 @@
     experimental:
       jobs:
         - nova-multi-cell
+        - nova-alt-configurations
         - tempest-with-latest-microversion
         - tempest-full-oslo-master
         - tempest-stestr-master
