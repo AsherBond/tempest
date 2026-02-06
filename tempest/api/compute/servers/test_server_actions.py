@@ -283,10 +283,11 @@ class ServerActionsTestJSON(ServerActionsBase):
         # a situation when a newly created server doesn't have a floating
         # ip attached at the beginning of the test_rebuild_server let's
         # make sure right here the floating ip is attached
-        waiters.wait_for_server_floating_ip(
-            self.servers_client,
-            server,
-            validation_resources['floating_ip'])
+        if 'floating_ip' in validation_resources:
+            waiters.wait_for_server_floating_ip(
+                self.servers_client,
+                server,
+                validation_resources['floating_ip'])
 
         self.addCleanup(waiters.wait_for_server_termination,
                         self.servers_client, server['id'])

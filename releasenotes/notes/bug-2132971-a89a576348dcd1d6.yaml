@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fixed bug #2132971. ``test_rebuild_server`` will no longer expect a
+    floating ip when floating ip networks are disabled.
